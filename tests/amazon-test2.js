@@ -20,7 +20,7 @@ module.exports = {
     global.reporter.after++;
   },
 
-  'Demo test Google 2': function(browser) {
+  'Demo test Google 1': function(browser) {
     browser
         .url(browser.launch_url)
         .waitForElementVisible('body', 1000)
