@@ -50,7 +50,7 @@ jobs:
 
     steps:
       - attach_workspace:
-        at: .
+          at: .
       # run tests!
       - run: yarn test
 
