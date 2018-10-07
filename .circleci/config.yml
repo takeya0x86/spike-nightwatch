@@ -32,6 +32,10 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "yarn.lock" }}
+      - persist_to_workspace:
+          root: .
+          paths: 
+            - .
   e2e-test:
     docker:
       # specify the version you desire here
@@ -45,6 +49,8 @@ jobs:
     working_directory: ~/repo
 
     steps:
+      - attach_workspace:
+        at: .
       # run tests!
       - run: yarn test
 
