@@ -7,7 +7,7 @@
     "test": "nightwatch --config ./nightwatch.conf.js"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "chromedriver": "2.42.0",
     "eslint": "5.6.1",
