@@ -1,27 +1,8 @@
 module.exports = {
 
-  'before': function(browser, done) {
-    console.log('Setting up... amazon-test before');
-    global.reporter.before++;
-    done();
-  },
-
-  'beforeEach': function(browser, done) {
-    console.log('... amazon-test beforeEach');
-    global.reporter.beforeEach++;
-    done();
-  },
-
-  'afterEach': function(browser, done) {
-    console.log('... amazon-test afterEach');
-    global.reporter.afterEach++;
-    done();
-  },
-
-  'after': function(browser, done) {
-    console.log('Closing down... amazon-test after');
-    global.reporter.after++;
-    done();
+  'beforeEach': function(browser) {
+    browser.setWindowPosition(0, 0);
+    browser.resizeWindow(1920, 1080);
   },
 
   'Demo test Amazon 1': function(browser) {
@@ -33,6 +14,7 @@ module.exports = {
         .click('#nav-search-submit-text')
         .pause(1000)
         .assert.containsText('body', 'プライム')
+        .saveScreenshot('./reports/demo-test-amazon1.png')
         .end();
   },
 
@@ -45,6 +27,7 @@ module.exports = {
         .click('#nav-search-submit-text')
         .pause(1000)
         .assert.containsText('body', 'プライム')
+        .saveScreenshot('./reports/demo-test-amazon2.png')
         .end();
   },
 };

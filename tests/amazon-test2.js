@@ -1,23 +1,8 @@
 module.exports = {
 
-  'before': function(browser) {
-    console.log('Setting up... amazon-test2 before');
-    global.reporter.before++;
-  },
-
   'beforeEach': function(browser) {
-    console.log('... amazon-test2 beforeEach');
-    global.reporter.beforeEach++;
-  },
-
-  'afterEach': function() {
-    console.log('... amazon-test2 afterEach');
-    global.reporter.afterEach++;
-  },
-
-  'after': function(browser) {
-    console.log('Closing down... amazon-test2 after');
-    global.reporter.after++;
+    browser.setWindowPosition(0, 0);
+    browser.resizeWindow(1920, 1080);
   },
 
   'Demo test Google 1': function(browser) {
@@ -29,6 +14,7 @@ module.exports = {
         .click('#nav-search-submit-text')
         .pause(1000)
         .assert.containsText('body', 'プライム')
+        .saveScreenshot('./reports/demo-test-google1.png')
         .end();
   },
 
@@ -41,6 +27,7 @@ module.exports = {
         .click('#nav-search-submit-text')
         .pause(1000)
         .assert.containsText('body', 'プライム')
+        .saveScreenshot('./reports/demo-test-google2.png')
         .end();
   },
 };

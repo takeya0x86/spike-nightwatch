@@ -1,7 +1,6 @@
 module.exports = {
   src_folders: ['./tests'],
   output_folder: './reports',
-  globals_path: './globals-module.js',
   selenium: {
     start_process: true,
     server_path: require('selenium-server').path,
