@@ -2,7 +2,7 @@ module.exports = {
 
   'beforeEach': function(browser) {
     browser.setWindowPosition(0, 0);
-    browser.resizeWindow(1920, 1080);
+    browser.resizeWindow(1080, 1920);
   },
 
   'Demo test Google 1': function(browser) {
